@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
 
     <title>Movie Search</title>
   </head>
-  <body>
-    <h1>Movie Search</h1>
+  <body class="m-5">
+    <h1 class="text-4xl text-gray-700 m-3">Movie Search</h1>
     <input
+      class="p-2 border border-green-300 rounded-md"
       type="text"
       id="movieName"
       name="movieName"
       placeholder="Enter movie name"
     />
 
-    <div id="movie_grid" class="grid grid-flow-row"></div>
+    <div id="movie_grid" class="grid grid-cols-4 m-2"></div>
 
     <script>
       let inputEl = document.querySelectorAll("input");
@@ -30,10 +35,14 @@
           .then((data) => {
             const movies = data.Search;
             const movieGrid = [];
-            movies.forEach((movie) =>
-              movieGrid.push(`<img src="&{movie.Poster}">`)
-            );
-            document.getElementById("movie_grid").innerHTML = movieGrid;
+            movies.forEach((movie) => {
+              const link = movie.Poster;
+              movieGrid.push("<img src='" + link + "'>");
+            });
+
+            document.getElementById("movie_grid").innerHTML =
+              movieGrid.join("");
+            console.log(movieGrid.join(""));
           });
       }
     </script>

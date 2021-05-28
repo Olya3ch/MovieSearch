@@ -11,17 +11,36 @@
 
     <title>Movie Search</title>
   </head>
-  <body class="m-5">
-    <h1 class="text-4xl text-gray-700 m-3">Movie Search</h1>
-    <input
-      class="p-2 border border-green-300 rounded-md"
-      type="text"
-      id="movieName"
-      name="movieName"
-      placeholder="Enter movie name"
-    />
+  <body class="m-8 bg-gray-900">
+    <div class="flex space-x-2">
+      <h1 class="p-1.5 text-4xl text-gray-100 m-1 rounded-md w-max bg-red-800">
+        Movie Search
+      </h1>
+      <input
+        class="
+          flex-grow
+          p-1
+          border border-red-900
+          rounded-md
+          bg-gray-200
+          text-xl
+        "
+        type="text"
+        id="movieName"
+        name="movieName"
+        placeholder="Enter movie name"
+      />
+      <button
+        class="p-1.5 text-2xl text-gray-100 m-1 rounded-md w-max bg-yellow-600"
+      >
+        Caută!
+      </button>
+    </div>
 
-    <div id="movie_grid" class="grid grid-cols-4 m-2"></div>
+    <div
+      id="movie_grid"
+      class="grid grid-cols-5 place-items-stretch gap-5 space-y-4 m-4"
+    ></div>
 
     <script>
       let inputEl = document.querySelectorAll("input");
@@ -42,7 +61,6 @@
 
             document.getElementById("movie_grid").innerHTML =
               movieGrid.join("");
-            console.log(movieGrid.join(""));
           });
       }
     </script>

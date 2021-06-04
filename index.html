@@ -11,19 +11,25 @@
 
     <title>Movie Search</title>
   </head>
-  <body class="m-8 bg-gray-900">
+  <body class="m-8 bg-gray-800">
     <div class="flex space-x-2">
-      <h1 class="p-1.5 text-4xl text-gray-100 m-1 rounded-md w-max bg-red-800">
+      <h1
+        class="p-1.5 text-2xl text-gray-100 m-1 rounded-md w-max font-extrabold"
+      >
         Movie Search
       </h1>
       <input
         class="
           flex-grow
           p-1
-          border border-red-900
+          text-white
+          outline-none
           rounded-md
-          bg-gray-200
+          bg-gray-700
           text-xl
+          focus:ring-2 focus:ring-gray-600
+          focus:placeholder-white
+          px-4
         "
         type="text"
         id="movieName"
@@ -31,15 +37,24 @@
         placeholder="Enter movie name"
       />
       <button
-        class="p-1.5 text-2xl text-gray-100 m-1 rounded-md w-max bg-yellow-600"
+        class="
+          py-2
+          px-4
+          text-xl
+          font-bold
+          text-gray-100
+          rounded-md
+          w-max
+          bg-yellow-600
+        "
       >
-        Caută!
+        Caută
       </button>
     </div>
 
     <div
       id="movie_grid"
-      class="grid grid-cols-5 place-items-stretch gap-4 space-y-4 m-4"
+      class="grid grid-cols-5 place-items-stretch gap-4 m-4 mt-8"
     ></div>
 
     <script>
